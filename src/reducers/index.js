@@ -6,6 +6,9 @@ const counterReducer = (count = 0, action) => {
         return count + action.increment;
     }
     else if (action.type === 'DECREMENT_COUNTER') {
+        if (count - action.decrement < 0) {
+            alert("Can't go below 0!!!");
+        }
         return count - action.decrement;
     }
     return count;
